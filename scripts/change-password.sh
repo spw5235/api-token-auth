@@ -1,10 +1,18 @@
 #!/bin/bash
 
 #curl "http://localhost:3000/change-password/${ID}" \
-curl "http://httpbin.org/patch?id=${ID}" \
+#!/bin/bash
+
+curl "http://httpbin.org/post" \
   --include \
-  --request PATCH \
-  --data-urlencode ""
+  --request POST \
+  --header "Content-Type: application/json" \
+  --data '{
+    "credentials": {
+      "old": "'${OLD}'",
+      "new": "'${NEW}'"
+    }
+  }'
 
 # data output from curl doesn't have a trailing newline
 echo

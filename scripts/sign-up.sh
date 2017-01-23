@@ -1,12 +1,9 @@
 #!/bin/bash
 
 #curl "http://localhost:3000/sign-up" \
-curl "http://httpbin.org/post" \
+curl "${API}${API_PATH}" \
   --include \
   --request POST \
-  --data-urlencode ""
+  --data-urlencode "'${DATA}'"
 
-# --header "Content-Type: application/x-www-form-urlencoded"
-
-# data output from curl doesn't have a trailing newline
-echo
+  echo
